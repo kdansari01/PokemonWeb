@@ -1,0 +1,40 @@
+.spin-10 {
+  height: 80px;
+  width: 80px;
+  position: relative;
+  animation: spin 1s infinite linear;
+}
+
+.spin-10::before,
+.spin-10::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+}
+
+.spin-10::after {
+  background: radial-gradient(at 75% 15%, #fffb, #0000 35%),
+    radial-gradient(at 80% 40%, #0000, #0008),
+    radial-gradient(circle 5px, #fff 94%, #0000),
+    radial-gradient(circle 10px, #000 94%, #0000),
+    linear-gradient(#f93318 0 0) top / 100% calc(50% - 5px),
+    linear-gradient(#fff 0 0) bottom/100% calc(50% - 5px) #000;
+  background-repeat: no-repeat;
+  animation: rotate 1.4s infinite linear;
+}
+
+.spin-10::before {
+  background: #ddd;
+  filter: blur(8px);
+  transform: scaleY(0.4) translate(-13px, 0px);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
